@@ -1,0 +1,74 @@
+project:
+  name: Edmonton Symphony Orchestra Outdoor Concerts Environmental Intelligence
+  timezone: America/Edmonton
+
+data_mode: auto
+
+# Unlike edmonton_folk_fest (one fixed venue), this event moves to a
+# different park every show night - core/config.py's load_config() injects
+# the correct venue into cfg['event'] each run by looking up today's date in
+# config/schedule.json, or sets it to None on any date with no scheduled
+# show. See schedule.json to add/correct dates and venues.
+
+# No confirmed ESO contact on file for this event (unlike edmonton_folk_fest's
+# Gary Redmond) - leave unset until Kevin supplies one; sitrep_pdf.py omits
+# the contact line entirely when this is absent, same as edmonton_city_sitrep.
+# contact:
+#   name: ""
+#   phone: ""
+
+weather:
+  forecast_hours: 24
+  timeout_seconds: 20
+
+air_quality:
+  current_source: "/opt/airquality/github/AB_datapull/data/output/aqhi_station_forecast_3h.csv"
+  forecast_source: "/opt/airquality/github/AB_datapull/data/output/aqhi_station_forecast_3h.csv"
+  blend_grid_file: "/opt/airquality/github/AB_datapull/data/output/AQHI_Alberta_blend.geojson"
+  pollutant_source: "/opt/airquality/github/AB_datapull/data/last6h.csv"
+  purpleair_source: "/opt/airquality/github/AB_datapull/data/AB_PM25_map.json"
+  firesmoke_current_file: "/opt/airquality/github/AB_datapull/data/output/firesmoke_now.geojson"
+  search_radius_km: 30
+  fallback_current_file: data/sample/aqhi_current.geojson
+  fallback_forecast_file: data/sample/aqhi_forecast.json
+
+map:
+  half_degree_bbox: 0.6
+  purpleair_radius_km: 25
+  station_radius_km: 40
+
+# FIRMS_API_KEY must be set as an environment variable (see /opt/airquality/config/intelligence.env),
+# never committed here - this repo is public.
+firms:
+  base_url: "https://firms.modaps.eosdis.nasa.gov"
+  source: "VIIRS_SNPP_NRT"
+  radius_km: 300
+  cluster_km: 10
+  min_confidence: 0.30
+  day_range: 2
+
+cameras:
+  base_url: "https://511.alberta.ca/api/v2/get/cameras"
+  radius_km: 15
+  max_cameras: 4
+
+# Runs the AB_winds back-trajectory model locally (Supabase-fed HRDPS wind data).
+# SUPABASE_URL / SUPABASE_SERVICE_KEY come from the environment (intelligence.env), not here.
+wind_trajectory:
+  ab_winds_dir: "/opt/airquality/github/AB_winds"
+  python_bin: "/opt/airquality/venv/bin/python3"
+  hours: 6
+  timeout_seconds: 240
+  fire_path_threshold_km: 20
+
+wind_shear:
+  timeout_seconds: 20
+
+thresholds:
+  heat: {moderate_c: 27, high_c: 30, extreme_c: 35}
+  wind_gust_kmh: {moderate: 45, high: 65, extreme: 90}
+  precipitation_probability: {moderate: 40, high: 70}
+  precipitation_mm_hour: {moderate: 2.5, high: 7.5}
+  aqhi: {moderate: 4, high: 7, extreme: 10.01}
+  aqhi_rate: {moderate: 1.0, high: 2.0, extreme: 3.0}
+  wind_shear: {moderate: 45, high: 90, extreme: 135}

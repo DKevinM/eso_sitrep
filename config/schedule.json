@@ -1,0 +1,71 @@
+{
+  "2026-08-20": {
+    "venue": "Centennial Park",
+    "city": "Devon, AB",
+    "latitude": 53.365,
+    "longitude": -113.730,
+    "time_local": "19:00",
+    "series": "Symphony in the Park",
+    "coordinate_note": "Town-centre-level estimate (Athabasca Ave) - no exact park-gate geocode found"
+  },
+  "2026-08-22": {
+    "venue": "Legacy Park",
+    "city": "Fort Saskatchewan, AB",
+    "latitude": 53.717,
+    "longitude": -113.208,
+    "time_local": "19:00",
+    "series": "Symphony in the Park",
+    "coordinate_note": "City-centre-level estimate (9904 101 St) - no exact park-gate geocode found"
+  },
+  "2026-08-23": {
+    "venue": "Four Seasons Park",
+    "city": "Beaumont, AB",
+    "latitude": 53.3461,
+    "longitude": -113.4263,
+    "time_local": "14:00",
+    "series": "Symphony in the Park"
+  },
+  "2026-08-29": {
+    "venue": "Station Lands",
+    "city": "Edmonton, AB",
+    "latitude": 53.5420,
+    "longitude": -113.4882,
+    "time_local": "19:00",
+    "series": "Symphony in the Park"
+  },
+  "2026-08-30": {
+    "venue": "Heritage Park Pavilion",
+    "city": "Stony Plain, AB",
+    "latitude": 53.538454,
+    "longitude": -114.011601,
+    "time_local": "14:00",
+    "series": "Symphony in the Park"
+  },
+  "2026-09-03": {
+    "venue": "Hawrelak Park (Heritage Amphitheatre)",
+    "city": "Edmonton, AB",
+    "latitude": 53.527,
+    "longitude": -113.547,
+    "time_local": "19:00",
+    "series": "Symphony Under the Sky",
+    "schedule_confidence": "found via web search, not independently verified against a live ticket page - recheck before relying on it"
+  },
+  "2026-09-05": {
+    "venue": "Hawrelak Park (Heritage Amphitheatre)",
+    "city": "Edmonton, AB",
+    "latitude": 53.527,
+    "longitude": -113.547,
+    "time_local": "14:00",
+    "series": "Symphony Under the Sky",
+    "schedule_confidence": "found via web search, not independently verified against a live ticket page - recheck before relying on it"
+  },
+  "2026-09-07": {
+    "venue": "Hawrelak Park (Heritage Amphitheatre)",
+    "city": "Edmonton, AB",
+    "latitude": 53.527,
+    "longitude": -113.547,
+    "time_local": "19:00",
+    "series": "Symphony Under the Sky",
+    "schedule_confidence": "found via web search, not independently verified against a live ticket page - recheck before relying on it"
+  }
+}

@@ -46,26 +46,39 @@
     "city": "Edmonton, AB",
     "latitude": 53.527,
     "longitude": -113.547,
-    "time_local": "19:00",
-    "series": "Symphony Under the Sky",
-    "schedule_confidence": "found via web search, not independently verified against a live ticket page - recheck before relying on it"
+    "time_local": "matinee (2pm) and/or evening (7pm) - exact per-day showtimes unconfirmed",
+    "series": "Symphony Under the Sky"
+  },
+  "2026-09-04": {
+    "venue": "Hawrelak Park (Heritage Amphitheatre)",
+    "city": "Edmonton, AB",
+    "latitude": 53.527,
+    "longitude": -113.547,
+    "time_local": "matinee (2pm) and/or evening (7pm) - exact per-day showtimes unconfirmed",
+    "series": "Symphony Under the Sky"
   },
   "2026-09-05": {
     "venue": "Hawrelak Park (Heritage Amphitheatre)",
     "city": "Edmonton, AB",
     "latitude": 53.527,
     "longitude": -113.547,
-    "time_local": "14:00",
-    "series": "Symphony Under the Sky",
-    "schedule_confidence": "found via web search, not independently verified against a live ticket page - recheck before relying on it"
+    "time_local": "matinee (2pm) and/or evening (7pm) - exact per-day showtimes unconfirmed",
+    "series": "Symphony Under the Sky"
+  },
+  "2026-09-06": {
+    "venue": "Hawrelak Park (Heritage Amphitheatre)",
+    "city": "Edmonton, AB",
+    "latitude": 53.527,
+    "longitude": -113.547,
+    "time_local": "matinee (2pm) and/or evening (7pm) - exact per-day showtimes unconfirmed",
+    "series": "Symphony Under the Sky"
   },
   "2026-09-07": {
     "venue": "Hawrelak Park (Heritage Amphitheatre)",
     "city": "Edmonton, AB",
     "latitude": 53.527,
     "longitude": -113.547,
-    "time_local": "19:00",
-    "series": "Symphony Under the Sky",
-    "schedule_confidence": "found via web search, not independently verified against a live ticket page - recheck before relying on it"
+    "time_local": "matinee (2pm) and/or evening (7pm) - exact per-day showtimes unconfirmed",
+    "series": "Symphony Under the Sky"
   }
 }

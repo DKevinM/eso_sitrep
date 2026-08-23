@@ -136,7 +136,7 @@ footer .foot-text {{ max-width:75%; }}
     <div class="big">{_v(cap_aqhi(aq.get('aqhi')))}</div>
     <div>
       <div class="lbl">Current AQHI at {aq.get('station_name', 'nearest station')} ({_v(aq.get('distance_km'), ' km from venue')})</div>
-      <div class="lbl">Forecast {valid_label}: <b>{_v(cap_aqhi(fx.get('plus_3h')))}</b></div>
+      <div class="lbl">Forecast {valid_label} at {fx.get('station_name', 'nearest forecast point')} ({_v(fx.get('distance_km'), ' km from venue')}): <b>{_v(cap_aqhi(fx.get('plus_3h')))}</b></div>
     </div>
   </div>
   <table class="msg">

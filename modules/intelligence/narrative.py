@@ -15,7 +15,7 @@ def build(cfg,w,aq,fx,a,fire=None,trajectory=None,wx_alerts=None):
  official=aq.get('official') or {}
  if official.get('status')=='ok':parts.append(f"The official Government of Alberta AQHI for {official.get('community')} is {faqhi(official.get('aqhi'))} (forecast tonight: {official.get('forecast_tonight') or 'n/a'}, tomorrow: {official.get('forecast_tomorrow') or 'n/a'}).")
  blend=aq.get('blend') or {}
- if blend.get('status')=='ok' and blend.get('value') is not None:parts.append(f"A gridded AQHI estimate blending official and community sensors (confidence: {blend.get('confidence','unknown')}) puts the area near {faqhi(blend.get('value'))}.")
+ if blend.get('status')=='ok' and blend.get('value') is not None:parts.append(f"A gridded AQHI estimate blending official and community sensors (confidence: {blend.get('confidence','unknown')}, nearest contributing point {f(blend.get('nearest_km'),1)} km away) puts the area near {faqhi(blend.get('value'))}.")
  pollutant=aq.get('pollutant') or {}
  if pollutant.get('status')=='ok':parts.append(f"The nearest air monitoring station ({pollutant.get('station_name')}, {f(pollutant.get('distance_km'),1)} km) reports fine particulate matter (PM2.5) at {f(pollutant.get('value'),1)} µg/m³.")
  pa=aq.get('purpleair') or {}
@@ -43,7 +43,7 @@ def build(cfg,w,aq,fx,a,fire=None,trajectory=None,wx_alerts=None):
   parts.append(f"The nearest active fire detection ({sensor_label(cfg.get('firms',{}).get('source'))}, last {nearest_fire.get('acq_date','—')}) is {nearest_fire['distance_km']} km {nearest_fire['direction']} of the venue.{align}")
  if fx.get('plus_3h') is not None:
   when=format_short(fx.get('valid_at'),tz)
-  parts.append(f"The AQHI forecast for {when or 'the next few hours'} is {faqhi(fx.get('plus_3h'))}.")
+  parts.append(f"The AQHI forecast for {when or 'the next few hours'} is {faqhi(fx.get('plus_3h'))}, based on {fx.get('station_name','the nearest forecast point')}, {f(fx.get('distance_km'),1)} km from the venue.")
  if m.get('thunderstorm_possible'):parts.append(f"Thunderstorm conditions appear in the hourly forecast beginning around {format_short(m.get('first_thunderstorm_hour'),cfg['project'].get('timezone','America/Edmonton'))}.")
  elif (m.get('max_precipitation_probability_pct') or 0)>=40:parts.append(f"Precipitation probability reaches approximately {f(m.get('max_precipitation_probability_pct'))}%.")
  key=[k.replace('_',' ') for k,v in h.items() if v['risk'] in ('HIGH','EXTREME')]; headline=f"Overall operational environmental risk is {a['overall_risk']}."+(f" Primary concerns are {', '.join(key)}." if key else '')
